@@ -1,418 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mezgebedingil Abebe | GIS & Remote Sensing Expert</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mezgebedingil Abebe | GIS & Remote Sensing Expert</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-        body {
-            background: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
+    body {
+      background: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
 
-        a { color: #90caf9; text-decoration: none; }
+    a { color: #90caf9; text-decoration: none; }
 
-        header {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            text-align: center;
-            border-bottom: 2px solid #333;
-        }
+    header {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-        }
+    header p {
+      font-size: 1.2rem;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+    }
 
-        .carousel {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
+    .carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
 
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .carousel .carousel-item {
-            min-width: 100%;
-            height: 100%;
-        }
+    .carousel .carousel-item {
+      min-width: 100%;
+      height: 100%;
+    }
 
-        nav {
-            background: #212121;
-            padding: 1rem;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
+    nav {
+      background: #212121;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
 
-        nav a {
-            margin: 0 1.5rem;
-            color: #e0e0e0;
-            font-weight: bold;
-        }
+    nav a {
+      margin: 0 1.5rem;
+      color: #e0e0e0;
+      font-weight: bold;
+    }
 
-        section {
-            padding: 3rem 1.5rem;
-            max-width: 960px;
-            margin: auto;
-        }
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 960px;
+      margin: auto;
+    }
 
-        h2 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-        }
+    h2 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+    }
 
-        .skills ul, .cv ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
+    .skills ul, .cv ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
 
-        .skills li, .cv li {
-            background: #333;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            color: #ccc;
-        }
+    .skills li, .cv li {
+      background: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: #ccc;
+    }
 
-        .item {
-            background: #1e1e1e;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
+    .item {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
 
-        .cv-download {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+    .cv-download {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        .cv-download a {
-            background: #2979ff;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    .cv-download a {
+      background: #2979ff;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-        form input, form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border: none;
-            border-radius: 5px;
-            background: #2c2c2c;
-            color: white;
-        }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      background: #2c2c2c;
+      color: white;
+    }
 
-        form button {
-            background: #2979ff;
-            color: white;
-            border: none;
-            padding: 0.75rem 2rem;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    form button {
+      background: #2979ff;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        footer {
-            background: #1f1f1f;
-            color: #aaa;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
-        }
+    footer {
+      background: #1f1f1f;
+      color: #aaa;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
 
-        .flex-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: flex-start;
-        }
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
 
-        .flex-text {
-            flex: 2;
-        }
+    .flex-text {
+      flex: 2;
+    }
 
-        .flex-image {
-            flex: 1;
-            max-width: 250px;
-        }
+    .flex-image {
+      flex: 1;
+      max-width: 250px;
+    }
 
-        .flex-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.6);
-            cursor: pointer;
-        }
+    .flex-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.6);
+      cursor: pointer;
+    }
 
-        /* Zoom Effect */
-        .zoomed-image {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
+    /* Zoom Effect */
+    .zoomed-image {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
 
-        .zoomed-image img {
-            max-width: 80%;
-            max-height: 80%;
-        }
+    .zoomed-image img {
+      max-width: 80%;
+      max-height: 80%;
+    }
 
-        .zoomed-image.active {
-            display: flex;
-        }
+    .zoomed-image.active {
+      display: flex;
+    }
 
 
-        .header-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
-            z-index: 1;
-        }
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+  z-index: 1;
+}
 
-        header h1, header p {
-            z-index: 2;
-            position: relative;
-        }
+header h1, header p {
+  z-index: 2;
+  position: relative;
+}
 
-        .portfolio-wrapper {
-            position: relative;
-            overflow: hidden;
-            max-width: 100%;
-        }
+.portfolio-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
 
-        .portfolio-carousel {
-            display: flex;
-            transition: transform 0.8s ease;
-            will-change: transform;
-        }
+.portfolio-carousel {
+  display: flex;
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
 
-        .portfolio-carousel .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
+.portfolio-carousel .carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
 
-        .carousel-btn {
-            position: absolute;
-            top: 45%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            background: rgba(0,0,0,0.6);
-            border: none;
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-            padding: 0 0.5rem;
-        }
+.carousel-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 0.5rem;
+}
 
-        .carousel-btn.prev { left: 0; }
-        .carousel-btn.next { right: 0; }
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
 
-        .portfolio-carousel iframe {
-            width: 100%;
-            border: none;
-            border-radius: 6px;
-        }
-    </style>
+.portfolio-carousel iframe {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+
+
+  </style>
 </head>
-
 <body>
 
 <header>
-    <div class="carousel">
-        <div class="carousel-item"><img src="image1.jpg" alt="Image 1"></div>
-        <div class="carousel-item"><img src="https://mezgebeabebe.github.io/CV/image2.jpg" alt="Image 2"></div>
-        <div class="carousel-item"><img src="images/image3.jpg" alt="Image 3"></div>
-        <div class="carousel-item"><img src="images/image4.jpg" alt="Image 4"></div>
-    </div>
-    <div class="header-overlay">
-        <h1 style="margin-bottom: 0.2rem; line-height: 0.3; color: white; text-shadow: 2px 2px 4px black;">Mezgebedingil Abebe Gezahegn</h1>
-        <p style="margin-top: 0; line-height: 1.2; color: white; text-shadow: 1px 1px 3px black;">
-            GIS & Remote Sensing Expert | Information Management Specialist <br>
-            +251 9 47 72 39 95 | mezgebedingil@outlook.com
-        </p>
-    </div>
+  <div class="carousel">
+    <div class="carousel-item"><img src="image1.jpg" alt="Image 1"></div>
+    <div class="carousel-item"><img src="image2.jpg" alt="Image 2"></div>
+    <div class="carousel-item"><img src="image3.jpg" alt="Image 3"></div>
+    <div class="carousel-item"><img src="image4.jpg" alt="Image 4"></div>
+  </div>
+  <div class="header-overlay">
+  <h1 style="margin-bottom: 0.2rem; line-height: 0.3; 
+           color: white; 
+           text-shadow: 2px 2px 4px black;">
+  Mezgebedingil Abebe Gezahegn
+</h1>
+
+<p style="margin-top: 0; line-height: 1.2; 
+          color: white; 
+          text-shadow: 1px 1px 3px black;">
+  GIS & Remote Sensing Expert | Information Management Specialist <br>
+  +251 9 47 72 39 95 | mezgebedingil@outlook.com
+</p>
+
+
+
+
+  </div>
 </header>
 
+
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#cv">CV</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>...</p>
+  <h2>About Me</h2>
+  <p>
+    Dynamic Information Management and GIS Officer with extensive experience in data coordination and spatial analysis within humanitarian and development contexts. 
+    Proficient in ArcGIS, QGIS, and Microsoft Excel, leveraging these tools to manage, analyze, and visualize complex datasets that inform decision-making 
+    and enhance operational effectiveness. Skilled in building collaborative relationships with diverse stakeholders to ensure data quality and facilitate 
+    effective information exchange. Adept at consolidating operational data and producing insightful infographics, maps, and reports to support planning and 
+    monitoring initiatives. Recognized for delivering tailored information products that meet client and partner needs while fostering a culture of 
+    collaboration and data-driven decision-making. Passionate about training and capacity-building, with a strong focus on enhancing the GIS and information 
+    management skills of government and partner agencies.
+  </p>
 </section>
 
 <section id="skills" class="skills">
-    <h2><i class="fas fa-tools" style="color:#90caf9; margin-right: 0.5rem;"></i> Key Skills</h2>
-    <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-        <li style="background: #2c2c2c; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 1rem;">
-            <i class="fas fa-globe-americas fa-2x" style="color:#64b5f6;"></i>
-            <div>
-                <h3 style="color: #fff; margin-bottom: 0.3rem; background-color: #388E3C; padding: 0.3rem 0.6rem; border-radius: 5px; display: inline-block;">Geospatial Analysis & Data Integration</h3>
-                <p style="color: #ccc; font-size: 0.9rem;">Proficient in ArcGIS, QGIS, and GIS tools for spatial analysis, data integration, and high-impact visual products.</p>
-            </div>
-        </li>
-        </ul>
+  <h2>Key Skills</h2>
+  <ul>
+    <li>Geospatial Analysis & Data Integration:</li> 
+    <p>Proficient in ArcGIS, QGIS, and GIS tools for spatial analysis, data integration, and high-impact visual products.</p>
+    <li>Data Visualization & Communication:</li>
+    <p>Skilled in Power BI and Adobe Illustrator to create interactive dashboards, infographics, and clear data-driven visuals.</p>
+    <li>Database Management & GIS Optimization:</li>
+    <p>Experienced in managing multi-user geodatabases and geo-web servers for efficient data storage and retrieval.</p>
+    <li>Training & Capacity Building:</li>
+    <p>Proven ability to deliver GIS and data management training, enhancing team and partner skills.</p>
+    <li>Project Management & Stakeholder Engagement:</li>
+    <p>Strong collaboration and coordination skills for multi-stakeholder projects and data-driven decision-making.</p>
+    <li>Problem-Solving & Strategic Thinking:</li>
+    <p>Analytical approach to complex challenges, ensuring accuracy, efficiency, and innovation in GIS and data initiatives.</p>
+  </ul>
 </section>
 
 <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-wrapper">
-        <button class="carousel-btn prev" onclick="movePortfolio(-1)">❮</button>
-        <div class="portfolio-carousel" id="portfolioCarousel">
-            <div class="carousel-item">
-                <div class="item">
-                    <h3>CCCM Cluster Dashboards</h3>
-                    <div class="flex-row">
-                        <div class="flex-text">
-                            <p>Led the development of interactive dashboards, visualizing real-time 4W (Who, What, Where, When) data to support decision-making at IOM Ethiopia.</p>
-                        </div>
-                        <div class="flex-image">
-                            <img src="images/SMDB.JPG" alt="CCCM Dashboard Screenshot" onclick="zoomImage(this)" />
-                        </div>
-                    </div>
-                </div>
+  <h2>Portfolio</h2>
+  <div class="portfolio-wrapper">
+    <button class="carousel-btn prev" onclick="movePortfolio(-1)">❮</button>
+    <div class="portfolio-carousel" id="portfolioCarousel">
+      <div class="carousel-item">
+        <div class="item">
+          <h3>CCCM Cluster Dashboards</h3>
+          <div class="flex-row">
+            <div class="flex-text">
+              <p>Led the development of interactive dashboards, visualizing real-time 4W (Who, What, Where, When) data to support decision-making at IOM Ethiopia.</p>
             </div>
-            <div class="carousel-item">
-                <div class="item">
-                    <h3>Humanitarian Response Mapping</h3>
-                    <p>Produced sector-based maps and infographics to support emergency operations, working closely with UN agencies and NGOs.</p>
-                    <iframe title="ServiceAvailabilityGapDashboard-March 2025-V00" width="100%" height="300" src="https://app.powerbi.com/view?r=eyJrIjoiZjk4MTYyNjEtZmQ2OC00ZTU5LThmMWEtZTkxMjQ2YjM1NWRkIiwidCI6IjE1ODgyNjJkLTIzZmItNDNiNC1iZDZlLWJjZTQ5YzhlNjE4NiIsImMiOjh9" frameborder="0" allowfullscreen="true"></iframe>
-                </div>
+            <div class="flex-image">
+              <img src="SMDB.JPG" alt="CCCM Dashboard Screenshot" onclick="zoomImage(this)" />
             </div>
-            <div class="carousel-item">
-                <div class="item">
-                    <h3>Informational Mobile Application</h3>
-                    <div class="flex-row">
-                        <div class="flex-text">
-                            <p>Conceptualized and [mention your role - e.g., developed/designed UI/UX for] a mobile application providing users with information across diverse areas such as [mention 1-2 key areas, e.g., local services and events].</p>
-                        </div>
-                        <div class="flex-image">
-                            <img src="images/infobook.png" alt="Mobile Application Screenshot" onclick="zoomImage(this)" />
-                        </div>
-                    </div>
-                    <p>Key features include [mention 1-2 key features, e.g., categorized information, user-friendly search functionality].</p>
-                </div>
-            </div>
+          </div>
         </div>
-        <button class="carousel-btn next" onclick="movePortfolio(1)">❯</button>
+      </div>
+      <div class="carousel-item">
+        <div class="item">
+          <h3>Humanitarian Response Mapping</h3>
+          <p>Produced sector-based maps and infographics to support emergency operations, working closely with UN agencies and NGOs.</p>
+          <iframe title="ServiceAvailabilityGapDashboard-March 2025-V00" width="100%" height="300" src="https://app.powerbi.com/view?r=eyJrIjoiZjk4MTYyNjEtZmQ2OC00ZTU5LThmMWEtZTkxMjQ2YjM1NWRkIiwidCI6IjE1ODgyNjJkLTIzZmItNDNiNC1iZDZlLWJjZTQ5YzhlNjE4NiIsImMiOjh9" frameborder="0" allowfullscreen="true"></iframe>
+        </div>
+      </div>
     </div>
+    <button class="carousel-btn next" onclick="movePortfolio(1)">❯</button>
+  </div>
 </section>
+
+
+
 
 <section id="cv" class="cv">
-    <h2>Curriculum Vitae</h2>
-    <div class="cv-download">
-        <a href="cv.pdf" target="_blank">Download Full CV</a>
-    </div>
+  <h2>Curriculum Vitae</h2>
+  <div class="cv-download">
+    <a href="cv.pdf" target="_blank">Download Full CV</a>
+  </div>
 </section>
 
+
+
 <footer>
-    <p>&copy; 2025 Mezgebedingil Abebe. All Rights Reserved.</p>
+  <p>&copy; 2025 Mezgebedingil Abebe. All Rights Reserved.</p>
 </footer>
 
-<div class="zoomed-image" id="zoomedImage">
-    <img id="zoomedImg" src="" alt="Zoomed" />
-</div>
+<script>
+  // JavaScript for Carousel with Circular Rotation
+  let currentIndex = 0;
+  const carouselItems = document.querySelectorAll('.carousel .carousel-item');
+  const totalItems = carouselItems.length;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // When it reaches the last image (Image 4), it will smoothly transition back to Image 1
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        document.querySelector('.carousel').style.transition = 'none';
+        document.querySelector('.carousel').style.transform = `translateX(0%)`;
+        setTimeout(() => {
+          document.querySelector('.carousel').style.transition = 'transform 1s ease-in-out';
+        }, 50);
+      }, 1000); // Delay to finish the transition before jumping back
+    }
+  }, 3000);
+
+  // Zoom Functionality
+  function zoomImage(img) {
+    const zoomedImage = document.createElement('div');
+    zoomedImage.classList.add('zoomed-image');
+    const zoomedImg = document.createElement('img');
+    zoomedImg.src = img.src;
+    zoomedImage.appendChild(zoomedImg);
+    document.body.appendChild(zoomedImage);
+    zoomedImage.classList.add('active');
+
+    zoomedImage.addEventListener('click', () => {
+      zoomedImage.classList.remove('active');
+      setTimeout(() => {
+        zoomedImage.remove();
+      }, 300);
+    });
+  }
+</script>
+
 
 <script>
-    // Header Carousel with Smooth Looping
-    let headerIndex = 0;
-    const headerCarousel = document.querySelector('.carousel');
-    const headerItems = document.querySelectorAll('.carousel .carousel-item');
-    const totalHeaderItems = headerItems.length;
+  let portfolioIndex = 0;
+  const portfolioCarousel = document.getElementById("portfolioCarousel");
 
-    setInterval(() => {
-        headerIndex++;
-        headerCarousel.style.transition = 'transform 1s ease-in-out';
-        headerCarousel.style.transform = `translateX(-${headerIndex * 100}%)`;
-
-        if (headerIndex === totalHeaderItems) {
-            setTimeout(() => {
-                headerCarousel.style.transition = 'none';
-                headerIndex = 0;
-                headerCarousel.style.transform = `translateX(0%)`;
-            }, 1000);
-        }
-    }, 3000);
-
-    // Portfolio Carousel with Manual Navigation
-    let currentPortfolio = 0;
-    const portfolioCarousel = document.getElementById('portfolioCarousel');
-    const portfolioItems = document.querySelectorAll('#portfolioCarousel .carousel-item');
-    const totalPortfolioItems = portfolioItems.length;
-
-    function movePortfolio(direction) {
-        currentPortfolio += direction;
-        if (currentPortfolio < 0) {
-            currentPortfolio = totalPortfolioItems - 1;
-        } else if (currentPortfolio >= totalPortfolioItems) {
-            currentPortfolio = 0;
-        }
-        portfolioCarousel.style.transform = `translateX(-${currentPortfolio * 100}%)`;
-    }
-
-    // Image Zoom Functionality
-    const zoomedImageDiv = document.getElementById('zoomedImage');
-    const zoomedImg = document.getElementById('zoomedImg');
-
-    function zoomImage(img) {
-        zoomedImg.src = img.src;
-        zoomedImageDiv.classList.add('active');
-    }
-
-    zoomedImageDiv.addEventListener('click', () => {
-        zoomedImageDiv.classList.remove('active');
-    });
+  function movePortfolio(direction) {
+    const totalItems = portfolioCarousel.children.length;
+    portfolioIndex = (portfolioIndex + direction + totalItems) % totalItems;
+    portfolioCarousel.style.transform = `translateX(-${portfolioIndex * 100}%)`;
+  }
 </script>
+
+
 
 </body>
 </html>
